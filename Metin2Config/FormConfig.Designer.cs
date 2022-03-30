@@ -31,6 +31,7 @@ namespace Metin2Config
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfig));
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCANCEL = new System.Windows.Forms.Button();
             this.gboxDisplaySettings = new System.Windows.Forms.GroupBox();
@@ -723,6 +724,7 @@ namespace Metin2Config
             this.Controls.Add(this.btnOK);
             this.Font = new System.Drawing.Font("Tahoma", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConfig";
             this.Text = " ";
             this.Load += new System.EventHandler(this.FormConfig_Load);
