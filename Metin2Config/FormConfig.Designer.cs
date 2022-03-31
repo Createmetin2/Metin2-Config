@@ -108,20 +108,20 @@ namespace Metin2Config
             // 
             // btnOK
             // 
-            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnOK.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnOK.Location = new System.Drawing.Point(128, 461);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(90, 21);
+            this.btnOK.Size = new System.Drawing.Size(90, 25);
             this.btnOK.TabIndex = 2;
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCANCEL
             // 
-            this.btnCANCEL.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCANCEL.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCANCEL.Location = new System.Drawing.Point(224, 461);
             this.btnCANCEL.Name = "btnCANCEL";
-            this.btnCANCEL.Size = new System.Drawing.Size(90, 21);
+            this.btnCANCEL.Size = new System.Drawing.Size(90, 25);
             this.btnCANCEL.TabIndex = 3;
             this.btnCANCEL.UseVisualStyleBackColor = true;
             this.btnCANCEL.Click += new System.EventHandler(this.btnCANCEL_Click);
@@ -691,7 +691,7 @@ namespace Metin2Config
             // pboxDarkMode
             // 
             this.pboxDarkMode.Image = global::Metin2Config.Properties.Resources.night_off;
-            this.pboxDarkMode.Location = new System.Drawing.Point(416, 461);
+            this.pboxDarkMode.Location = new System.Drawing.Point(416, 464);
             this.pboxDarkMode.Name = "pboxDarkMode";
             this.pboxDarkMode.Size = new System.Drawing.Size(24, 22);
             this.pboxDarkMode.TabIndex = 8;
