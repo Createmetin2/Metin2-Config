@@ -490,7 +490,7 @@ namespace Metin2Config
             // rbtnNightOff
             // 
             this.rbtnNightOff.AutoSize = true;
-            this.rbtnNightOff.Location = new System.Drawing.Point(116, 13);
+            this.rbtnNightOff.Location = new System.Drawing.Point(116, 15);
             this.rbtnNightOff.Name = "rbtnNightOff";
             this.rbtnNightOff.Size = new System.Drawing.Size(14, 13);
             this.rbtnNightOff.TabIndex = 1;
@@ -500,7 +500,7 @@ namespace Metin2Config
             // 
             this.rbtnNightOn.AutoSize = true;
             this.rbtnNightOn.Checked = true;
-            this.rbtnNightOn.Location = new System.Drawing.Point(19, 13);
+            this.rbtnNightOn.Location = new System.Drawing.Point(19, 15);
             this.rbtnNightOn.Name = "rbtnNightOn";
             this.rbtnNightOn.Size = new System.Drawing.Size(14, 13);
             this.rbtnNightOn.TabIndex = 0;
@@ -550,7 +550,7 @@ namespace Metin2Config
             // rbtnFogOff
             // 
             this.rbtnFogOff.AutoSize = true;
-            this.rbtnFogOff.Location = new System.Drawing.Point(116, 13);
+            this.rbtnFogOff.Location = new System.Drawing.Point(116, 15);
             this.rbtnFogOff.Name = "rbtnFogOff";
             this.rbtnFogOff.Size = new System.Drawing.Size(14, 13);
             this.rbtnFogOff.TabIndex = 1;
@@ -560,7 +560,7 @@ namespace Metin2Config
             // 
             this.rbtnFogOn.AutoSize = true;
             this.rbtnFogOn.Checked = true;
-            this.rbtnFogOn.Location = new System.Drawing.Point(19, 13);
+            this.rbtnFogOn.Location = new System.Drawing.Point(19, 15);
             this.rbtnFogOn.Name = "rbtnFogOn";
             this.rbtnFogOn.Size = new System.Drawing.Size(14, 13);
             this.rbtnFogOn.TabIndex = 0;
@@ -580,7 +580,7 @@ namespace Metin2Config
             // rbtnSnowOff
             // 
             this.rbtnSnowOff.AutoSize = true;
-            this.rbtnSnowOff.Location = new System.Drawing.Point(116, 13);
+            this.rbtnSnowOff.Location = new System.Drawing.Point(116, 15);
             this.rbtnSnowOff.Name = "rbtnSnowOff";
             this.rbtnSnowOff.Size = new System.Drawing.Size(14, 13);
             this.rbtnSnowOff.TabIndex = 1;
@@ -590,7 +590,7 @@ namespace Metin2Config
             // 
             this.rbtnSnowOn.AutoSize = true;
             this.rbtnSnowOn.Checked = true;
-            this.rbtnSnowOn.Location = new System.Drawing.Point(19, 13);
+            this.rbtnSnowOn.Location = new System.Drawing.Point(19, 15);
             this.rbtnSnowOn.Name = "rbtnSnowOn";
             this.rbtnSnowOn.Size = new System.Drawing.Size(14, 13);
             this.rbtnSnowOn.TabIndex = 0;
@@ -610,7 +610,7 @@ namespace Metin2Config
             // rbtnSnowTextureOff
             // 
             this.rbtnSnowTextureOff.AutoSize = true;
-            this.rbtnSnowTextureOff.Location = new System.Drawing.Point(116, 13);
+            this.rbtnSnowTextureOff.Location = new System.Drawing.Point(116, 15);
             this.rbtnSnowTextureOff.Name = "rbtnSnowTextureOff";
             this.rbtnSnowTextureOff.Size = new System.Drawing.Size(14, 13);
             this.rbtnSnowTextureOff.TabIndex = 1;
@@ -620,7 +620,7 @@ namespace Metin2Config
             // 
             this.rbtnSnowTextureOn.AutoSize = true;
             this.rbtnSnowTextureOn.Checked = true;
-            this.rbtnSnowTextureOn.Location = new System.Drawing.Point(19, 13);
+            this.rbtnSnowTextureOn.Location = new System.Drawing.Point(19, 15);
             this.rbtnSnowTextureOn.Name = "rbtnSnowTextureOn";
             this.rbtnSnowTextureOn.Size = new System.Drawing.Size(14, 13);
             this.rbtnSnowTextureOn.TabIndex = 0;
@@ -640,7 +640,7 @@ namespace Metin2Config
             // rbtnPetOff
             // 
             this.rbtnPetOff.AutoSize = true;
-            this.rbtnPetOff.Location = new System.Drawing.Point(116, 13);
+            this.rbtnPetOff.Location = new System.Drawing.Point(116, 15);
             this.rbtnPetOff.Name = "rbtnPetOff";
             this.rbtnPetOff.Size = new System.Drawing.Size(14, 13);
             this.rbtnPetOff.TabIndex = 1;
@@ -650,7 +650,7 @@ namespace Metin2Config
             // 
             this.rbtnPetOn.AutoSize = true;
             this.rbtnPetOn.Checked = true;
-            this.rbtnPetOn.Location = new System.Drawing.Point(19, 13);
+            this.rbtnPetOn.Location = new System.Drawing.Point(19, 15);
             this.rbtnPetOn.Name = "rbtnPetOn";
             this.rbtnPetOn.Size = new System.Drawing.Size(14, 13);
             this.rbtnPetOn.TabIndex = 0;
