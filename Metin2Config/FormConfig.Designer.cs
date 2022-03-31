@@ -327,7 +327,7 @@ namespace Metin2Config
             this.rbtnWindowMode.Size = new System.Drawing.Size(14, 13);
             this.rbtnWindowMode.TabIndex = 0;
             this.rbtnWindowMode.UseVisualStyleBackColor = true;
-            this.rbtnWindowMode.Click += new System.EventHandler(this.rbtnWindowMode_Click);
+            this.rbtnWindowMode.Click += new System.EventHandler(this.ShowSlowWarning);
             // 
             // gboxGraphicSettings
             // 
@@ -675,7 +675,7 @@ namespace Metin2Config
             this.rbtnOutIME.Size = new System.Drawing.Size(14, 13);
             this.rbtnOutIME.TabIndex = 1;
             this.rbtnOutIME.UseVisualStyleBackColor = true;
-            this.rbtnOutIME.Click += new System.EventHandler(this.rbtnOutIME_Click);
+            this.rbtnOutIME.Click += new System.EventHandler(this.ShowSlowWarning);
             // 
             // rbtnGameIME
             // 
