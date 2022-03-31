@@ -232,16 +232,16 @@ namespace Metin2Config
             // trbarBGM
             // 
             this.trbarBGM.AutoSize = false;
-            this.trbarBGM.LargeChange = 20;
+            this.trbarBGM.LargeChange = 500;
             this.trbarBGM.Location = new System.Drawing.Point(78, 13);
-            this.trbarBGM.Maximum = 100;
+            this.trbarBGM.Maximum = 1000;
             this.trbarBGM.Name = "trbarBGM";
             this.trbarBGM.Size = new System.Drawing.Size(121, 17);
-            this.trbarBGM.SmallChange = 10;
+            this.trbarBGM.SmallChange = 100;
             this.trbarBGM.TabIndex = 18;
             this.trbarBGM.TickFrequency = 0;
             this.trbarBGM.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trbarBGM.Value = 100;
+            this.trbarBGM.Value = 1000;
             this.trbarBGM.Scroll += new System.EventHandler(this.trbarBGM_Scroll);
             // 
             // tboxSFX

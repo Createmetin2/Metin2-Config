@@ -295,8 +295,11 @@ namespace Metin2Config
 								break;
 
 							case "MUSIC_VOLUME":
-								trbarBGM.Value = (int)(decimal.Parse(Value, System.Globalization.CultureInfo.InvariantCulture) * 100);
-								tboxBGM.Text = ((double)trbarBGM.Value / 100).ToString("0.0", System.Globalization.CultureInfo.InvariantCulture);
+								if (Value.Contains('.'))
+									trbarBGM.Value = (int)(decimal.Parse(Value, System.Globalization.CultureInfo.InvariantCulture) * trbarBGM.Maximum);
+								else
+									trbarBGM.Value = Convert.ToByte(Value) * 200;
+								tboxBGM.Text = ((double)trbarBGM.Value / trbarBGM.Maximum).ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
 								break;
 
 							case "VOICE_VOLUME":
@@ -445,7 +448,7 @@ namespace Metin2Config
 				configFile.WriteLine($"FREQUENCY\t\t\t\t\t{cboxFrequency.Text}");
 				configFile.WriteLine($"SOFTWARE_CURSOR\t\t\t\t{(chboxUseSoftCursor.Checked ? 1 : 0)}");
 				configFile.WriteLine($"OBJECT_CULLING\t\t\t\t1"); // default
-				configFile.WriteLine($"MUSIC_VOLUME\t\t\t\t{tboxBGM.Text}");
+				configFile.WriteLine($"MUSIC_VOLUME\t\t\t\t{((double)trbarBGM.Value / trbarBGM.Maximum).ToString("F3", System.Globalization.CultureInfo.InvariantCulture)}");
 				configFile.WriteLine($"VOICE_VOLUME\t\t\t\t{tboxSFX.Text}");
 				configFile.WriteLine($"GAMMA\t\t\t\t\t\t{cboxGamma.Text}");
 				configFile.WriteLine($"IS_SAVE_ID\t\t\t\t\t0"); // default
@@ -516,7 +519,7 @@ namespace Metin2Config
 
 		private void trbarBGM_Scroll(object sender, EventArgs e)
 		{
-			tboxBGM.Text = ((double)trbarBGM.Value / 100).ToString("0.0", System.Globalization.CultureInfo.InvariantCulture);
+			tboxBGM.Text = ((double)trbarBGM.Value / trbarBGM.Maximum).ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
 		}
 
 		private void trbarSFX_Scroll(object sender, EventArgs e)
