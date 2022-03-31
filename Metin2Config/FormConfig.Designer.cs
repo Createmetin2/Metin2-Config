@@ -697,6 +697,7 @@ namespace Metin2Config
             this.pboxDarkMode.TabIndex = 8;
             this.pboxDarkMode.TabStop = false;
             this.toolTip1.SetToolTip(this.pboxDarkMode, "Dark Mode");
+            this.pboxDarkMode.Visible = false;
             this.pboxDarkMode.Click += new System.EventHandler(this.pboxDarkMode_Click);
             // 
             // FormConfig

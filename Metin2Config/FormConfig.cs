@@ -447,8 +447,8 @@ namespace Metin2Config
 
         private void FormConfig_Load(object sender, EventArgs e)
         {
-#if !DARK_MODE
-			pboxDarkMode.Hide();
+#if DARK_MODE
+            pboxDarkMode.Show();
 #endif
             LoadStrings();
             SetStrings();
