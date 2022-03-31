@@ -42,13 +42,20 @@ namespace Metin2Config
 			if (!FrequencyList.Contains(Frequency))
 				FrequencyList.Add(Frequency);
 		}
+
+		public override string ToString()
+		{
+			return $"{this.Width}x{this.Height} {this.BPP}bpp";
+		}
 	}
 
 	public enum ELocaleType
 	{
 		LANGUAGE,
 		CODE,
-		NAME
+		NAME,
+
+		TYPE_MAX
 	}
 
 	public partial class FormConfig : Form
@@ -229,7 +236,7 @@ namespace Metin2Config
 				foreach (var line in lines)
 				{
 					var arrLocale = line.Split(' ');
-					if (arrLocale.Length < 3)
+					if (arrLocale.Length < (int)ELocaleType.TYPE_MAX)
 						continue;
 
 					var localeObj = new SLocale
@@ -258,6 +265,8 @@ namespace Metin2Config
 			{
 				try
 				{
+					var TempScreenSettings = new SScreenSettings(-1, -1, -1);
+					
 					var lines = File.ReadAllLines(m_ConfigFileName);
 					foreach (var line in lines)
 					{
@@ -269,6 +278,18 @@ namespace Metin2Config
 
 						switch (Key)
 						{
+							case "WIDTH":
+								TempScreenSettings.Width = Convert.ToInt32(Value);
+								break;
+
+							case "HEIGHT":
+								TempScreenSettings.Height = Convert.ToInt32(Value);
+								break;
+
+							case "BPP":
+								TempScreenSettings.BPP = Convert.ToInt32(Value);
+								break;
+
 							case "SOFTWARE_CURSOR":
 								chboxUseSoftCursor.Checked = (Value == "1");
 								break;
@@ -340,6 +361,10 @@ namespace Metin2Config
 								break;
 						}
 					}
+
+					int idx = m_ScreenSettingsList.FindIndex(x => x.Width == TempScreenSettings.Width && x.Height == TempScreenSettings.Height && x.BPP == TempScreenSettings.BPP);
+					if (idx != -1)
+						cboxResolution.SelectedIndex = idx;
 				}
 				catch (Exception ex)
 				{
@@ -353,12 +378,12 @@ namespace Metin2Config
 				foreach (var line in lines)
 				{
 					var arrLocale = line.Split(' ');
-					if (arrLocale.Length < (3 - 1))
+					if (arrLocale.Length < ((int)ELocaleType.TYPE_MAX - 1))
 						continue;
 
 					var localeName = arrLocale[(int)ELocaleType.NAME - 1];
 					int idx = m_LocaleList.FindIndex(x => x.name == localeName);
-					if (idx >= 0)
+					if (idx != -1)
 					{
 						cboxLocale.SelectedIndex = idx;
 						break;
@@ -378,7 +403,7 @@ namespace Metin2Config
 					continue;
 
 				int index = m_ScreenSettingsList.FindIndex(x => x.Width == vDevMode.dmPelsWidth && x.Height == vDevMode.dmPelsHeight && x.BPP == vDevMode.dmBitsPerPel);
-				SScreenSettings s = index >= 0 ? m_ScreenSettingsList[index] : new SScreenSettings(vDevMode.dmPelsWidth, vDevMode.dmPelsHeight, vDevMode.dmBitsPerPel);
+				SScreenSettings s = (index != -1) ? m_ScreenSettingsList[index] : new SScreenSettings(vDevMode.dmPelsWidth, vDevMode.dmPelsHeight, vDevMode.dmBitsPerPel);
 				s.AddFrequency(vDevMode.dmDisplayFrequency);
 
 				if (index == -1)
@@ -387,7 +412,7 @@ namespace Metin2Config
 #pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
 
 			foreach (SScreenSettings v in m_ScreenSettingsList)
-				cboxResolution.Items.Add($"{v.Width}x{v.Height} {v.BPP}bpp");
+				cboxResolution.Items.Add(v.ToString());
 
 			if (cboxResolution.Items.Count > 0)
 				cboxResolution.SelectedIndex = 0;
@@ -416,7 +441,7 @@ namespace Metin2Config
 			{
 				configFile.WriteLine($"WIDTH\t\t\t\t\t\t{m_ScreenSettingsList.ElementAt(cboxResolution.SelectedIndex).Width}");
 				configFile.WriteLine($"HEIGHT\t\t\t\t\t\t{m_ScreenSettingsList.ElementAt(cboxResolution.SelectedIndex).Height}");
-				configFile.WriteLine($"BBP\t\t\t\t\t\t\t{m_ScreenSettingsList.ElementAt(cboxResolution.SelectedIndex).BPP}");
+				configFile.WriteLine($"BPP\t\t\t\t\t\t\t{m_ScreenSettingsList.ElementAt(cboxResolution.SelectedIndex).BPP}");
 				configFile.WriteLine($"FREQUENCY\t\t\t\t\t{cboxFrequency.Text}");
 				configFile.WriteLine($"SOFTWARE_CURSOR\t\t\t\t{(chboxUseSoftCursor.Checked ? 1 : 0)}");
 				configFile.WriteLine($"OBJECT_CULLING\t\t\t\t1"); // default
